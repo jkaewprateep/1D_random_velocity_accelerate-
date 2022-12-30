@@ -1,7 +1,9 @@
 # 1D_random_velocity_accelerate-
-For study 1D velocity accelerate object sample in Flappy bird's game.
+For the study, 1D velocity accelerates object samples in the Flappy bird games.
 
 ## Sample single input to output relatioship ##
+
+With a single requirement, we consider it as an action of ```K_w``` for press key W and press nothing as ```K_h```. It is easy as you understand two options on the left and right of ```[ upper_pipe_buttom, 512 - pipe_gap ]``` which side has more value than another will be selected and its index use as an action index to select an action from the action list ```actions = { "up___1": K_w, "none_1": K_h }```
 
 ```
 gap = (( next_pipe_bottom_y_array - next_pipe_top_y_array ) / 2 )
@@ -33,7 +35,8 @@ safety_value = 15
 leftside_velocity_pt = int( next_pipe_dist_to_player_array  / 2 )
 	
 # right side point degrades
-rightside_velocity_pt = int( next_pipe_dist_to_player_array  + ( next_next_pipe_dist_to_player_array - next_pipe_dist_to_player_array ) / 2 )
+rightside_velocity_pt = int( next_pipe_dist_to_player_array  + ( next_next_pipe_dist_to_player_array - 
+             next_pipe_dist_to_player_array ) / 2 )
 	
 # position Y upper gap
 next_pipe_top_y_array
