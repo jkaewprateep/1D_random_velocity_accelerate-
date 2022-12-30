@@ -25,7 +25,10 @@ temp = tf.math.multiply(temp, tf.constant([ coeff_01, coeff_02 ], shape=(2, 1), 
 temp = tf.math.argmax(temp)
 action = int(temp[0])
 ```
+
 ## Sample multiple inputs to output relatioship ##
+
+For some reason, we need to study further about the equation and value response to function or correlated response we need to know about how distances create within the area space and we try to make use of it flying slove if you observed see it differently flying patterns.
 
 ```
 # safety value
