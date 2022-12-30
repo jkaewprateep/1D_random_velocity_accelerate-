@@ -1,6 +1,7 @@
 # 1D_random_velocity_accelerate-
 For study 1D velocity accelerate object sample in Flappy bird's game.
 
+## Sample single input to output relatioship ##
 
 ```
 gap = (( next_pipe_bottom_y_array - next_pipe_top_y_array ) / 2 )
@@ -21,6 +22,62 @@ temp = tf.math.multiply(temp, tf.constant([ coeff_01, coeff_02 ], shape=(2, 1), 
 	
 temp = tf.math.argmax(temp)
 action = int(temp[0])
+```
+## Sample multiple inputs to output relatioship ##
+
+```
+# safety value
+safety_value = 15
+	
+# Left side point degrades
+leftside_velocity_pt = int( next_pipe_dist_to_player_array  / 2 )
+	
+# right side point degrades
+rightside_velocity_pt = int( next_pipe_dist_to_player_array  + ( next_next_pipe_dist_to_player_array - next_pipe_dist_to_player_array ) / 2 )
+	
+# position Y upper gap
+next_pipe_top_y_array
+
+# position Y standard gap
+next_pipe_bottom_y_array 
+
+# position Y upper gap next
+next_next_pipe_top_y_array
+
+# position Y standard gap next
+next_next_pipe_bottom_y_array
+	
+# distance from player_y_array to upper gap
+distance_upper_gap = player_y_array - next_pipe_top_y_array - safety_value
+
+# distance from player_y_array to standard gap
+distance_standard_gap = next_pipe_bottom_y_array - player_y_array + safety_value
+
+# distance from player_y_array to upper gap next
+distance_upper_gap_next = player_y_array - player_y_array - safety_value
+
+# distance from player_y_array to standard gap next
+distance_standard_gap_next = next_next_pipe_bottom_y_array - player_y_array + safety_value
+
+# acceleration
+accleration = accum_velocity + distance_upper_gap * accum_velocity
+	
+contrl = gamescores + ( 50 * reward )
+coff_0 = player_y_array
+coff_1 = leftside_velocity_pt
+coff_2 = rightside_velocity_pt
+coff_3 = next_pipe_top_y_array
+coff_4 = next_pipe_bottom_y_array
+coff_5 = accum_velocity
+coff_6 = accleration
+coff_7 = distance_upper_gap
+coff_8 = distance_standard_gap
+coff_9 = next_next_pipe_top_y_array
+coff_10 = next_next_pipe_bottom_y_array
+coff_11 = distance_upper_gap_next
+coff_12 = distance_standard_gap_next
+coff_13 = safety_value
+coff_14 = step
 ```
 
 ## Files and Directory ##
