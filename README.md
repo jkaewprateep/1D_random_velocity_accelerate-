@@ -23,6 +23,16 @@ temp = tf.math.argmax(temp)
 action = int(temp[0])
 ```
 
+## Files and Directory ##
+
+| File name | Description  |
+--- | --- |
+| Sample.py | sample random codes for testing with AI |
+| Figure_14.png | plottings 100 step runnning |
+| Figure_23.png | plottings 1,000 step runnning |
+| Figure_25.png | plottings 2,500 step runnning |
+| FlappyBirds.gif | GIF animation game play |
+| README.md | readme file |
 
 ## Result ##
 
